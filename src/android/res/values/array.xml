@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="decode_upc_ean_supplemental_redundancy">
+        <item>2 time</item>
+        <item>3 time</item>
+        <item>4 time</item>
+        <item>5 time</item>
+        <item>6 time</item>
+        <item>7 time</item>
+        <item>8 time</item>
+        <item>9 time</item>
+        <item>10 time</item>
+        <item>11 time</item>
+        <item>12 time</item>
+        <item>13 time</item>
+        <item>14 time</item>
+        <item>15 time</item>
+        <item>16 time</item>
+        <item>17 time</item>
+        <item>18 time</item>
+        <item>19 time</item>
+        <item>20 time</item>
+        <item>21 time</item>
+        <item>22 time</item>
+        <item>23 time</item>
+        <item>24 time</item>
+        <item>25 time</item>
+        <item>26 time</item>
+        <item>27 time</item>
+        <item>28 time</item>
+        <item>29 time</item>
+        <item>30 time</item>
+    </string-array>
+    
+    <string-array name="length_type">
+        <item>One Discrete Length</item>
+        <item>Two Discrete Length</item>
+        <item>Length Within Range</item>
+        <item>Any Length</item>
+    </string-array>
+    
+</resources>

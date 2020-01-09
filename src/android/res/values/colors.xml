@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="code_type">#1d9de1</color>
+    <color name="barcode">#181818</color>
+    <color name="count">#fdc222</color>
+    
+    <color name="label_caption">#2d9bd5</color>
+	<color name="label_color">#598aa1</color>
+    <color name="value_color">#1a58af</color>
+    
+</resources>

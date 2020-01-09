@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ATID Barcode Scanner Demo</string>
+    <string name="scanner_config">Scanner Configuration</string>
+
+    <string name="barcode_option_name">Barcode Scanner Configuration</string>
+    <string name="state_symbologies_name">Enable/Disable Symbologies</string>
+    <string name="general_config_name">General Configuration</string>
+    <string name="symbol_upc_ean_name">UPC/EAN Configuration</string>
+    <string name="symbol_code128_name">Code 128 Configuration</string>
+    <string name="symbol_code39_name">Code 39 Configuration</string>
+    <string name="symbol_code93_name">Code 93 Configuration</string>
+    <string name="symbol_code11_name">Code 11 Configuration</string>
+    <string name="symbol_interleaved2of5_name">Interleaved 2 of 5 Configuration</string>
+    <string name="symbol_discete2of5_name">Discete 2 of 5 Configuration</string>
+    <string name="symbol_codabar_name">Codabar Configuration</string>
+    <string name="symbol_msi_name">MSI Configuration</string>
+    <string name="symbol_config">Configuration</string>
+    
+    <string name="scan_result_hint">Start to read by pressing above button</string>
+    <string name="set_default_all_parameter">Set Default All Parameter!!!</string>
+    <string name="disabled_all_symbologies">Disabled All Symbologies!!!</string>
+    <string name="enabled_all_symbologies">Enabled All Symbologies!!!</string>
+    <string name="faile_to_set_symbologies">Faile to set symbologies</string>
+    <string name="failed_to_get_symbol_parameter">Failed to get symbol parameter</string>
+    <string name="failed_to_default_all_parameter">Failed to default all parameter</string>
+    <string name="failed_to_disable_all_symbologies">Failed to disable all symbologies</string>
+    <string name="failed_to_enable_all_symbologies">Failed to enable all symbologies</string>
+    <string name="device_error">Device Error</string>
+    <string name="filaed_to_device">No Scanner device. Please check the device system</string>
+    <string name="ok_button">OK</string>
+    
+    <string name="scan_count_label">Scan Count</string>
+    <string name="difference_count_label">Diffrenece Count</string>
+    <string name="timeout_count_label">Timeout Count</string>
+    
+    <string name="clear_label">Clear</string>
+    <string name="start_scan_label">Start Scan</string>
+    <string name="stop_scan_label">Stop Scan</string>
+    
+    <string name="option_symbology">Symbology</string>
+    <string name="set_enable_status">Set Enable Status</string>
+    <string name="default_all_symbologies">Default All Symbologies</string>
+    <string name="disable_all_symbologies">Disable All Symbologies</string>
+    <string name="enable_all_symbologies">Enable All Symbologies</string>
+    <string name="gerneral_config">General Configuration</string>
+    
+    <string name="set_symbol_state">Set Symbologies</string>
+    
+    <string name="linear_code_type_security_level">Linear Code Type Security Level</string>
+    <string name="bidirectional_redundancy">Bi-directional Redundancy</string>
+    <string name="scan_angle">Scan Angle</string>
+    <string name="set_config">Set Configuration</string>
+    
+    <string name="transmit_upc_a_check_digit">Transmit UPC-A Check Digit</string>
+    <string name="transmit_upc_e_check_digit">Transmit UPC-E Check Digit</string>
+    <string name="transmit_upc_e1_check_digit">Transmit UPC-E1 Check Digit</string>
+    <string name="convert_upc_e_to_upc_a">Convert UPC-E to UPC-A</string>
+    <string name="convert_upc_e1_to_upc_a">Convert UPC-E1 to UPC-A</string>
+    <string name="ean_zero_extend">EAN Zero Extend</string>
+    <string name="convert_ean_8_to_ean_13_type">Convert EAN-8 to EAN-13 Type</string>
+    <string name="ucc_coupon_extended_code">UCC Coupon Extended Code</string>
+    <string name="decode_upc_ean_suppliementals">Decode UPC/EAN Suppliementals</string>
+    <string name="decode_upc_ean_suppliementals_redundancy">Decode UPC/EAN Suppliementals Redundancy</string>
+    <string name="upc_ean_security_level">UPC/EAN Security Level</string>
+    <string name="upc_a_preamble">UPC-A Preamble</string>
+    <string name="upc_e_preamble">UPC-E Preamble</string>
+    <string name="upc_e1_preamble">UPC-E1 Preamble</string>
+    
+    <string name="set_option">Set Option</string>
+    
+    <string name="trioptic_code_39">Trioptic Code 39</string>
+    <string name="convert_code_39_to_code_32">Convert Code 39 to Code 32</string>
+    <string name="code_32_prefix">Code 32 Prefix</string>
+    <string name="code_39_check_digit_verification">Code 39 Check Digit Verification</string>
+    <string name="transmit_code_39_check_digit">Transmit Code 39 Check Digit</string>
+    <string name="code_39_full_ascii">Code 39 Full ASCII</string>
+    
+    <string name="set_length_type">Set Length Type</string>
+    <string name="length">Length</string>
+    <string name="min_length">Min Length</string>
+    <string name="max_length">Max Length</string>
+    
+    <string name="code_11_check_digit_verification">Code 11 Check Digit Verification</string>
+    <string name="transmit_code_11_check_digit">Transmit Code 11 Check Digit</string>
+    
+    <string name="transmit_i_2_of_5_ehcekc_digit">Transmit I 2 of 5 Ehcekc Digit</string>
+    <string name="convert_i_2_of_5_to_ean_13">Convert I 2 of 5 to EAN-13</string>
+    <string name="i_2_of_5_chechk_digit_verification">I 2 of 5 Chechk Digit Verification</string>
+    
+    <string name="clsi_editing">CLSI Editing</string>
+    <string name="notis_editing">NOTIS Editing</string>
+    
+    <string name="msi_check_digits">MSI Check Digits</string>
+    <string name="transmit_msi_check_digit">Transmit MSI Check Digit</string>
+    <string name="msi_check_digit_algorithm">MSI Check Digit Algorithm</string>
+    <string name="laser_on_time">Laser On Time</string>
+    <string name="aim_duration">Aim Duration</string>
+    <string name="time_out_between_same_symbol">Time-out Between Same Symbol</string>
+    <string name="beep_after_good_decode">Beep After Good Decode</string>
+    <string name="beeper_volume">Beeper Volume</string>
+    <string name="beeper_frequency_adjustment">Beeper Frequency Adjustment</string>
+    
+    <string name="narrow_angle">Narrow Angle (35°)</string>
+    <string name="medium_angle">Medium Angle (46°)</string>
+    <string name="wide_angle">Wide Angle (53°)</string>
+    
+    <string name="linear_security_level_1">Linear Security Level 1</string>
+    <string name="linear_security_level_2">Linear Security Level 2</string>
+    <string name="linear_security_level_3">Linear Security Level 3</string>
+    <string name="linear_security_level_4">Linear Security Level 4</string>
+    <string name="demo_version">Demo Version</string>
+    <string name="device_revision">Device Revision</string>
+    <string name="check_digit">Check Digit</string>
+    <string name="addenda_2_digit">2 Digit Addenda</string>
+    <string name="addenda_5_digit">5 Digit Addenda</string>
+    <string name="addenda_required">Addenda Required</string>
+    <string name="addenda_separator">Addenda Separator</string>
+    <string name="number_system">Number System</string>
+    <string name="coupon_code">UPC-A/EAN-13 with Extended Coupon Code</string>
+    <string name="expand">UPC-E0 Expand</string>
+    <string name="isbn_translate">ISBN Translate</string>
+    <string name="message_length">Message Length</string>
+    <string name="minimum">Minimum</string>
+    <string name="maximum">Maximum</string>
+    <string name="start_stop_character">Start/Stop Character</string>
+    <string name="check_charecter">Check Charecter</string>
+    <string name="ean_ucc_emulation">EAN/UCC Emulation</string>
+    <string name="concatenation">Concatenation</string>
+    <string name="code_39_append">Code 39 Append</string>
+    <string name="code_39_pharmaceutical">Code 39 Pharmaceutical (PARAF)</string>
+    <string name="isbt_concatenation">ISBT Concatenation</string>
+    <string name="aztec_runes">Aztec Runes</string>
+    <string name="code_page">Code Page</string>
+    <string name="check_digit_transmit">Check Digit Transmit</string>
+    <string name="start_stop_charecter_transmit">Start/Stop Charecter Transmit</string>
+    <string name="telepen_output">Telepen Output</string>
+    <string name="check_digits_required">Check Digits Required</string>
+    <string name="read_type">Read Type</string>
+    <string name="ocr_type">OCR Type</string>
+    <string name="ocr_template">OCR Template</string>
+    <string name="user_defined_variable_g">User-Defined Variable g</string>
+    <string name="user_defined_variable_h">User-Defined Variable h</string>
+    <string name="check_character">Check Character</string>
+    <string name="read_timeout">Read Timeout</string>
+    <string name="reread_delay">Reread Delay</string>
+    <string name="illumination_lights">Illumination Lights</string>
+    <string name="aimer_delay">Aimer Delay</string>
+    <string name="aimer_mode">Aimer Mode</string>
+    <string name="unit_ms">ms</string>
+    
+    <string name="symbol_enable">Symbol enable</string>
+    <string name="symbol_set_length">Symbol set length</string>
+    <string name="symbol_opt1">option1</string>
+    <string name="symbol_opt2">option2</string>
+    <string name="symbol_opt3">option3</string>
+    <string name="symbol_opt4">option4</string>
+    <string name="symbol_opt5">option5</string>
+    <string name="IsbtConcatenationRedundancy">Concatenation Redundancy</string>
+    <string name="symbol_aztec_name">Aztec Configuration</string>
+    <string name="symbol_datamatrix_name">Data Matrix Configuration</string>
+    <string name="symbol_maxicode_name">MaxiCode Configuration</string>
+    <string name="symbol_microqr_name">MicroQR Configuration</string>
+    <string name="symbol_micropdf417_name">MicroPDF417 Configuration</string>
+    <string name="symbol_pdf417_name">PDF417 Configuration</string>
+    <string name="symbol_qrcode_name">QRCode Configuration</string>
+    <string name="symbol_matrix2of5_name">Matrix 2 of 5 Configuration</string>
+    <string name="symbol_korea3of5_name">Korea 3 of 5 Configuration</string>
+    <string name="symbol_uspostnet_name">US Postnet Configuration</string>
+    <string name="symbol_usplanet_name">US Planet Configuration</string>
+    <string name="symbol_japanpostal_name">Japan Postal Configuration</string>
+    <string name="symbol_australiapost_name">Australia Post Configuration</string>
+    <string name="symbol_kixcode_name">Netherlands KIX Configuration</string>
+    <string name="symbol_intelligentmail_name">Intelligent Mail Configuration</string>
+    <string name="symbol_ficspostal_name">FICS Postal Configuration</string>
+    <string name="symbol_compostite_name">Composite Configuration</string>
+    <string name="symbol_hanxin_name">Han Xin Configuration</string>
+    <string name="symbol_ukpostal_name">UK Postal Configuration</string>
+    <string name="symbol_rss_name">RSS(GS1 DataBar) Configuration</string>
+    <string name="symbol_issnean_name">ISSN EAN Configuration</string>
+    <string name="symbol_ch2of5_name">Chinese 2 of 5 Configuration</string>
+    <string name="inverse_1d">Inverse 1D</string>
+    <string name="transmit_checkdigit">Transmit Check Digit</string>
+    <string name="rss_14_enable">RSS-14(GS1 DataBar)</string>
+    <string name="rss_limited_enable">RSS-Limited(GS1 DataBar Limited)</string>
+    <string name="rss_expanded_enable">RSS-Expanded(GS1 DataBar Expanded)</string>
+    <string name="rss_limited_security_level">RSS-Limited Security Level</string>
+    <string name="convert_rss_to_upcean">Convert RSS-14 to UPC/EAN</string>
+    <string name="char_set_name">CharSet is used for decoding </string>
+    
+</resources>

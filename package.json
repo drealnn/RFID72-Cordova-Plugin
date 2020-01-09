@@ -1,0 +1,27 @@
+{
+  "name": "atid-barcode-rfid",
+  "version": "0.2.5",
+  "description": "Cordova Device Plugin",
+  "cordova": {
+    "id": "simplicity-atid-barcode-rfid",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drealnn/cordova-plugin-ATID911N.git"
+  },
+  "keywords": [
+    "cordova",
+    "device",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Daniel Sledd",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/drealnn/cordova-plugin-ATID911N/issues"
+  },
+  "homepage": "https://github.com/drealnn/cordova-plugin-ATID911N#readme"
+}

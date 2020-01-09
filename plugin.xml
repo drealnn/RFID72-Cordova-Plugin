@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        id="simplicity-rfid72-barcode-rfid" version="0.1.0">
+    <name>Device</name>
+    <description>Cordova Device Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device</keywords>
+    
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Rfid">
+                <param name="android-package" value="com.rfid72.app.Rfid"/>
+            </feature>
+	        
+            <feature name="Barcode">
+                <param name="android-package" value="com.rfid72.app.Barcode"/>
+            </feature>
+
+            <feature name="rfid72General">
+                <param name="android-package" value="com.rfid72.app.General"/>
+            </feature>
+			
+			<feature name="SoundLoader">
+                <param name="android-package" value="com.rfid72.app.SoundLoader"/>
+            </feature>
+
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
+            <uses-permission android:name="android.permission.VIBRATE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        </config-file>
+
+
+        <js-module src="www/android/rfid72_rfid.js" name="rfid72">
+            <clobbers target="rfid72.rfid" />
+        </js-module>
+
+	    <js-module src="www/android/rfid72_barcode.js" name="rfid72-barcode">
+            <clobbers target="rfid72.barcode" />
+        </js-module>
+
+        <js-module src="www/android/general.js" name="rfid72-params">
+            <clobbers target="rfid72.general" />
+        </js-module>
+
+        <source-file src="src/android/Rfid.java" target-dir="src/com/rfid72/app" />
+	    <source-file src="src/android/Barcode.java" target-dir="src/com/rfid72/app" />
+        <source-file src="src/android/General.java" target-dir="src/com/rfid72/app" />
+
+        <lib-file src="src/android/libs/cw-deviceapi20190815.jar" />
+	    <lib-file src="src/android/libs/IGLBarDecoder.jar" />
+        <lib-file src="src/android/libs/jxl.jar" />
+        <lib-file src="src/android/libs/xUtils-2.5.5.jar" />
+      
+		<source-file src="src/android/libs/arm64-v8a/libbarcodereader44.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libIAL.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libSDL.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libDeviceAPI.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libHHPScanInterface.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libHSMDecoderAPI.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libHsmKil.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libIGLBarDecoder.so" target-dir="jniLibs/arm64-v8a" />
+		<source-file src="src/android/libs/arm64-v8a/libIGLImageAE.so" target-dir="jniLibs/arm64-v8a" />
+		
+		<source-file src="src/android/libs/armeabi/libbarcodereader.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libbarcodereader43.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libbarcodereader44.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libIAL.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libSDL.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libDeviceAPI.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libHHPScanInterface.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libHSMDecoderAPI.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libHsmKil.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libIGLBarDecoder.so" target-dir="jniLibs/armeabi" />
+		<source-file src="src/android/libs/armeabi/libIGLImageAE.so" target-dir="jniLibs/armeabi" />
+	 
+
+		<source-file src="src/android/libs/armeabi-v7a/libbarcodereader.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libbarcodereader43.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libbarcodereader44.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libIAL.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libSDL.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libDeviceAPI.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libHHPScanInterface.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libHSMDecoderAPI.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libHsmKil.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libIGLBarDecoder.so" target-dir="jniLibs/armeabi-v7a" />
+		<source-file src="src/android/libs/armeabi-v7a/libIGLImageAE.so" target-dir="jniLibs/armeabi-v7a" />
+
+
+        <resource-file src="src/android/res/raw/barcodebeep.ogg" target="res/raw/barcodebeep.ogg" />
+        <resource-file src="src/android/res/raw/serror.ogg" target="res/raw/serror.ogg" />
+	   
+
+
+    </platform>
+
+</plugin>
+
