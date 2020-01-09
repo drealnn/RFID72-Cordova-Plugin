@@ -50,6 +50,7 @@
         <source-file src="src/android/Rfid.java" target-dir="src/com/rfid72/app" />
 	    <source-file src="src/android/Barcode.java" target-dir="src/com/rfid72/app" />
         <source-file src="src/android/General.java" target-dir="src/com/rfid72/app" />
+		<source-file src="src/android/SoundLoader.java" target-dir="src/com/rfid72/app" />
 
         <lib-file src="src/android/libs/cw-deviceapi20190815.jar" />
 	    <lib-file src="src/android/libs/IGLBarDecoder.jar" />
