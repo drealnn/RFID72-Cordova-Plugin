@@ -1,5 +1,6 @@
 package com.rfid72.app;
 
+import android.content.Context;
 import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.os.PowerManager;
@@ -35,6 +36,7 @@ private CallbackContext keyup_callback = null;
 private CallbackContext keydown_callback = null;
 private CallbackContext getDecode_callback = null;
 private View currentView = null;
+private Context ctx;
 
 //ScanResult mScanResult;
 
@@ -144,8 +146,8 @@ public Barcode2DWithSoft.ScanCallback  ScanBack = new Barcode2DWithSoft.ScanCall
                 result = new PluginResult(PluginResult.Status.ERROR, "Error in constructing json for success decode callback");
             }
 
-            SoundLoader.getInstance(cordova.getContext()).playSuccess();
-            SoundLoader.getInstance(cordova.getContext()).vibrate();
+            SoundLoader.getInstance(ctx).playSuccess();
+            SoundLoader.getInstance(ctx).vibrate();
         }
         result.setKeepCallback(true);
         getDecode_callback.sendPluginResult(result);
@@ -155,10 +157,11 @@ public Barcode2DWithSoft.ScanCallback  ScanBack = new Barcode2DWithSoft.ScanCall
 @Override
 public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
+    this.ctx = cordova.getActivity().getApplicationContext();
     mScanner = Barcode2DWithSoft.getInstance();
     boolean result = false;
     if(mScanner != null) {
-        result = mScanner.open(cordova.getContext());
+        result = mScanner.open(ctx);
         Log.i(TAG,"open="+result);
         if(result){
 //                mScanner.setParameter(324, 1);
@@ -185,7 +188,7 @@ public class InitScannerTask extends AsyncTask<String, Integer, Boolean> {
     protected Boolean doInBackground(String... params) {
         boolean result = false;
         if(mScanner != null) {
-            result = mScanner.open(cordova.getContext());
+            result = mScanner.open(ctx);
             Log.i(TAG,"open="+result);
         }
         return result;
