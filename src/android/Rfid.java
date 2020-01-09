@@ -148,10 +148,6 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
 
     // getters and setters //
     
-    else if (action.equals("getActionState")){
-        //callbackContext.success((mReader.getAction()) + "");
-        return true;
-    }
     else if (action.equals("getPowerRange")){
         Log.d(TAG, "++Get Power Range");
         callbackContext.success(new JSONObject("{\'min\': \'" + minPower + "\' , \'max\' : \'" + maxPower + "\' }"));
@@ -171,11 +167,6 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
 
         return true;
     }
-    else if (action.equals("getOperationTime")){
-        Log.d(TAG, "++Get OperationTime");
-        Log.d(TAG, "--Get OperationTime");
-        return true;
-    }
     else if (action.equals("setPower")){
         Log.d(TAG, "++set power level");
         if (mReader.setPower(args.getInt(0))){
@@ -190,23 +181,6 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         Log.d(TAG, "--set power level");
         return true;
     }
-    else if (action.equals("setOperationTime")){
-        Log.d(TAG, "++set operation time");
-        Log.d(TAG, "--set operation time");
-
-        return true;
-    }
-    else if (action.equals("setInventoryTime")){
-        Log.d(TAG, "++setInventoryTime");
-        Log.d(TAG, "--setInventoryTime");
-        return true;
-    }
-    else if (action.equals("setIdleTime")){
-        Log.d(TAG, "++ setIdleTime");
-        Log.d(TAG, "-- setIdleTime");
-        return true;
-    }
-
     // Reading and Writing //
 
     else if (action.equals("start_readContinuous"))
@@ -314,29 +288,8 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
 
 
     // Events //
-
-    else if(action.equalsIgnoreCase("register_keyDown")){
-            this.keydown_callback = callbackContext;
-            return true;
-    }
-    else if(action.equalsIgnoreCase("register_keyUp")){
-            this.keyup_callback = callbackContext;
-            return true;
-    }
     else if(action.equalsIgnoreCase("onReaderReadTag")){
             this.onReaderReadTag_callback = callbackContext;
-            return true;
-    }
-    else if(action.equalsIgnoreCase("onReaderResult")){
-            this.onReaderResult_callback = callbackContext;
-            return true;
-    }
-    else if(action.equalsIgnoreCase("onReaderStateChanged")){
-            this.onReaderStateChanged_callback = callbackContext;
-            return true;
-    }
-    else if(action.equalsIgnoreCase("onReaderActionChanged")){
-            this.onReaderActionChanged_callback = callbackContext;
             return true;
     }
     else if(action.equalsIgnoreCase("disableSounds")){
