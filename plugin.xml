@@ -17,7 +17,7 @@
                 <param name="android-package" value="com.rfid72.app.Barcode"/>
             </feature>
 
-            <feature name="rfid72General">
+            <feature name="General">
                 <param name="android-package" value="com.rfid72.app.General"/>
             </feature>
 			

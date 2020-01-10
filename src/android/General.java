@@ -71,6 +71,7 @@ public class General extends CordovaPlugin {
                     @Override
                     public boolean onKey(View view, int keyCode, KeyEvent event){
                         //boolean val = super.onKey(view, keyCode, event);
+                        Log.e(TAG, ""+keyCode);
                         return doKey(view, keyCode, event);
                     }
                 }
