@@ -56,6 +56,8 @@
 	    <lib-file src="src/android/libs/IGLBarDecoder.jar" />
         <lib-file src="src/android/libs/jxl.jar" />
         <lib-file src="src/android/libs/xUtils-2.5.5.jar" />
+		
+		<source-file src="src/android/libs/build-extras.gradle" target-dir="src/.." />
       
 		<source-file src="src/android/libs/arm64-v8a/rfid_72_libbarcodereader44.so" target-dir="libs/arm64-v8a" />
 		<source-file src="src/android/libs/arm64-v8a/rfid_72_libIAL.so" target-dir="libs/arm64-v8a" />
