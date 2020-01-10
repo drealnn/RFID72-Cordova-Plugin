@@ -65,8 +65,10 @@ public class General extends CordovaPlugin {
 
         Log.i(TAG, "RFID72 general Initialized");
         ctx = cordova.getActivity().getApplicationContext();
-        this.currentView = webView.getView();
-        this.currentView.setOnKeyListener(
+        webView.getView().setFocusable(true);
+        webView.getView().setFocusableInTouchMode(true);
+        webView.getView().requestFocus();
+        webView.getView().setOnKeyListener(
                 new View.OnKeyListener(){
                     @Override
                     public boolean onKey(View view, int keyCode, KeyEvent event){
@@ -76,6 +78,8 @@ public class General extends CordovaPlugin {
                     }
                 }
         );
+
+        this.currentView = webView.getView();
 
     }
 
