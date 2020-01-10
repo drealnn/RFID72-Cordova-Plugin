@@ -35,16 +35,16 @@
         </config-file>
 
 
-        <js-module src="www/android/rfid72_rfid.js" name="rfid72">
-            <clobbers target="rfid72.rfid" />
+        <js-module src="www/android/rfid72_rfid.js" name="rscja">
+            <clobbers target="rscja.rfid" />
         </js-module>
 
-	    <js-module src="www/android/rfid72_barcode.js" name="rfid72-barcode">
-            <clobbers target="rfid72.barcode" />
+	    <js-module src="www/android/rfid72_barcode.js" name="rscja-barcode">
+            <clobbers target="rscja.barcode" />
         </js-module>
 
-        <js-module src="www/android/general.js" name="rfid72-params">
-            <clobbers target="rfid72.general" />
+        <js-module src="www/android/general.js" name="rscja-params">
+            <clobbers target="rscja.general" />
         </js-module>
 
         <source-file src="src/android/Rfid.java" target-dir="src/com/rfid72/app" />
