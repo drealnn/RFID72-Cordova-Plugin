@@ -89,7 +89,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("wakeup")){
-        Log.d(TAG, "+- wakeup scanner");
+        Log.i(TAG, "+- wakeup scanner");
 
         /*if(mReader != null)
             ATRfidManager.wakeUp();*/
@@ -98,7 +98,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("sleep")){
-        Log.d(TAG, "+- sleep scanner");
+        Log.i(TAG, "+- sleep scanner");
         if (stopInventory()) {
             callbackContext.success("Called sleep function");
         } else {
@@ -107,7 +107,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("forceSleep")){
-        Log.d(TAG, "+- force sleep scanner");
+        Log.i(TAG, "+- force sleep scanner");
         if(mReader != null) {
             mReader.free();
             //mReader.disconnect();
@@ -117,7 +117,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("forceWake")){
-        Log.d(TAG, "+- force wake scanner");
+        Log.i(TAG, "+- force wake scanner");
         if(mReader != null) {
             if(!mReader.init()) {
                 Log.e(TAG, "ERROR. wakeUp() - Failed to connect rfid reader");
@@ -132,7 +132,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("pause_scanner")){
-        Log.d(TAG, "+- pause scanner");
+        Log.i(TAG, "+- pause scanner");
         if (mReader != null){
             stopInventory(callbackContext);
         }
@@ -140,7 +140,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("resume_scanner")){
-        Log.d(TAG, "+- resume scanner");
+        Log.i(TAG, "+- resume scanner");
         //if (mReader != null)
             //mReader.setEventListener(this);
         return true;
@@ -149,26 +149,26 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
     // getters and setters //
     
     else if (action.equals("getPowerRange")){
-        Log.d(TAG, "++Get Power Range");
+        Log.i(TAG, "++Get Power Range");
         callbackContext.success(new JSONObject("{\'min\': \'" + minPower + "\' , \'max\' : \'" + maxPower + "\' }"));
-        Log.d(TAG, "--Get Power Range");
+        Log.i(TAG, "--Get Power Range");
 
         return true;
     }
     else if (action.equals("getPower")){
-        Log.d(TAG, "++Get Power");
+        Log.i(TAG, "++Get Power");
         int power = mReader.getPower();
         if (power > -1){
             callbackContext.success("" + power);
         } else {
             callbackContext.error("failed to get power");
         }
-        Log.d(TAG, "--Get Power");
+        Log.i(TAG, "--Get Power");
 
         return true;
     }
     else if (action.equals("setPower")){
-        Log.d(TAG, "++set power level");
+        Log.i(TAG, "++set power level");
         if (mReader.setPower(args.getInt(0))){
             callbackContext.success("successfully set power level to "+args.getInt(0));
         } else {
@@ -178,7 +178,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
             callbackContext.error("failed to set power level");
         }
 
-        Log.d(TAG, "--set power level");
+        Log.i(TAG, "--set power level");
         return true;
     }
     // Reading and Writing //
@@ -191,7 +191,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         }
         else{
             final CallbackContext myCallbackContext = callbackContext;
-            Log.d(TAG, "Starting read continuous on new thread");
+            Log.i(TAG, "Starting read continuous on new thread");
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
                     startAction(TagType.Tag6C, true, myCallbackContext);
@@ -212,7 +212,7 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         }
         else{
             final CallbackContext myCallbackContext = callbackContext;
-            Log.d(TAG, "Starting read single on new thread");
+            Log.i(TAG, "Starting read single on new thread");
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
                     startAction(TagType.Tag6C, false, myCallbackContext);
@@ -339,14 +339,14 @@ public void onPause(boolean multitasking) {
 
 
 private void deinitalize(){
-    Log.d(TAG, "+++ onDeinitalize");
+    Log.i(TAG, "+++ onDeinitalize");
     stopInventory();
     if (mReader != null) {
         mReader.free();
         //mReader.free();
 	}
 
-    Log.d(TAG, "--- onDeinitalize");
+    Log.i(TAG, "--- onDeinitalize");
 }
 
 private boolean stopInventory(CallbackContext callbackContext){

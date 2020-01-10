@@ -57,44 +57,44 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
         return true;
     }
     else if (action.equals("wakeup_scanner")){
-        Log.d(TAG, "+- wakeup scanner");
+        Log.i(TAG, "+- wakeup scanner");
         
         //if(mScanner != null)
         //    ATScanManager.wakeUp();
         return true;
     }
     else if (action.equals("sleep_scanner")){
-        Log.d(TAG, "+- sleep scanner");
+        Log.i(TAG, "+- sleep scanner");
         /*if(mScanner != null) {
             ATScanManager.sleep();
         }*/
         return true;
     }
     else if (action.equals("scanner_startDecode")){
-        Log.d(TAG, "++Start Decode");
+        Log.i(TAG, "++Start Decode");
         //mScanResult = null;
         this.mScanner.scan();
-        Log.d(TAG, "--Start Decode");
+        Log.i(TAG, "--Start Decode");
         
         return true;
     }
     else if (action.equals("scanner_stopDecode")){
-        Log.d(TAG, "++Stop Decode");
+        Log.i(TAG, "++Stop Decode");
         this.mScanner.stopScan();
-        Log.d(TAG, "--Stop Decode");
+        Log.i(TAG, "--Stop Decode");
         
         return true;
     }
     else if (action.equals("scanner_isDecoding")){
-        Log.d(TAG, "++Is Decoding");
+        Log.i(TAG, "++Is Decoding");
         //callbackContext.success("" + this.mScanner.isDecoding());
-        Log.d(TAG, "--Is Decoding");
+        Log.i(TAG, "--Is Decoding");
         
         return true;
     }
     // TODO: replace with  android -> javascript async call instead of javascript->android sync call
     /*else if (action.equals("scanner_getDecodeCallback")){
-        Log.d(TAG, "Start Decode");
+        Log.i(TAG, "Start Decode");
         if (mScanResult != null)
         {
             // TODO: return json instead of string
@@ -248,16 +248,16 @@ public void onResume(boolean multitasking){
 
 
 private void deinitalize(){
-    Log.d(TAG, "+++ onDeinitalize");
+    Log.i(TAG, "+++ onDeinitalize");
     mScanner.stopScan();
     mScanner.close();
-    Log.d(TAG, "--- onDeinitalize");
+    Log.i(TAG, "--- onDeinitalize");
 }
 
 /*@Override
 public void onDecodeEvent(BarcodeType type, String barcode) {
 
-    Log.d(TAG, "onDecodeEvent(" + type + ", [" + barcode
+    Log.i(TAG, "onDecodeEvent(" + type + ", [" + barcode
             + "])");
 
     mScanResult = new ScanResult();
@@ -299,13 +299,13 @@ public void onDecodeEvent(BarcodeType type, String barcode) {
 @Override
 public void onStateChanged(EventType state) {
     
-    Log.d(TAG, "EventType : " + state.toString());
+    Log.i(TAG, "EventType : " + state.toString());
 }
 
 /*
 // Beep & Vibrate
 private void beep(boolean isSuccess) {
-    Log.d(TAG, "@@@@ DEBUG. Play beep....!!!!");
+    Log.i(TAG, "@@@@ DEBUG. Play beep....!!!!");
     try{
         if(isSuccess){
             this.mSoundPool.play(mBeepSuccess, 1, 1, 0, 0, 1);
