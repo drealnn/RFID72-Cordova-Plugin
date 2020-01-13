@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class General extends CordovaPlugin {
+public class General extends CordovaPlugin implements View.OnKeyListener {
 
 
     private CallbackContext keyup_callback = null;
@@ -59,6 +59,11 @@ public class General extends CordovaPlugin {
         return false;
     }
 
+    public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+        Log.e(TAG, ""+keyCode);
+        return doKey(view, keyCode, keyEvent);
+    }
+
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -66,7 +71,7 @@ public class General extends CordovaPlugin {
         Log.i(TAG, "RFID72 general Initialized");
         ctx = cordova.getActivity().getApplicationContext();
         final CordovaWebView myWebView = webView;
-        cordova.getActivity().runOnUiThread(new Runnable() {
+        /*cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
                 myWebView.getView().setOnKeyListener(
                         new View.OnKeyListener(){
@@ -79,7 +84,7 @@ public class General extends CordovaPlugin {
                         }
                 );
             }
-        });
+        });*/
 
         this.currentView = webView.getView();
 
