@@ -185,7 +185,9 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
 
     else if (action.equals("start_readContinuous"))
     {
+		Log.i(TAG, "++start readContinuous");
         startInventory(callbackContext, args.getJSONObject(0));
+		Log.i(TAG, "--start readContinuous");
         /*if (!args.getBoolean(0)){
             startAction(TagType.Tag6C, true, callbackContext);
         }
@@ -269,7 +271,9 @@ public boolean execute(String action, JSONArray args, CallbackContext callbackCo
                 stopAction(myCallbackContext);
             }
         });*/
+		Log.i(TAG, "++Stop Read");
         stopInventory(callbackContext);
+		Log.i(TAG, "--Stop Read");
         return true;
     }
     else if (action.equals("is_running"))

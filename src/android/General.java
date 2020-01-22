@@ -1,4 +1,4 @@
-package com.rfid72.app;
+package com.ssg.cordova;
 
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class General extends CordovaPlugin implements View.OnKeyListener {
+public class Keyboard extends CordovaPlugin {
 
 
     private CallbackContext keyup_callback = null;
@@ -40,9 +40,7 @@ public class General extends CordovaPlugin implements View.OnKeyListener {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
         result.setKeepCallback(true);
-
         // Events //
-
         if(action.equalsIgnoreCase("register_keyDown")){
             this.keydown_callback = callbackContext;
             return true;
@@ -51,43 +49,28 @@ public class General extends CordovaPlugin implements View.OnKeyListener {
             this.keyup_callback = callbackContext;
             return true;
         }
-        else if(action.equalsIgnoreCase("playSound"))
-        {
-            this.playSound(args.getString(0), callbackContext);
-            return true;
-        }
         return false;
-    }
-
-    public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-        Log.e(TAG, ""+keyCode);
-        return doKey(view, keyCode, keyEvent);
     }
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-
-        Log.i(TAG, "RFID72 general Initialized");
+        Log.i(TAG, "Keyboard Capture Plugin Initialized");
         ctx = cordova.getActivity().getApplicationContext();
-        final CordovaWebView myWebView = webView;
-        /*cordova.getActivity().runOnUiThread(new Runnable() {
-            public void run() {
-                myWebView.getView().setOnKeyListener(
-                        new View.OnKeyListener(){
-                            @Override
-                            public boolean onKey(View view, int keyCode, KeyEvent event){
-                                //boolean val = super.onKey(view, keyCode, event);
-                                Log.e(TAG, ""+keyCode);
-                                return doKey(view, keyCode, event);
-                            }
-                        }
-                );
-            }
-        });*/
-
+		View.OnKeyListener listener = new View.OnKeyListener(){
+			@Override
+			public boolean onKey(View view, int keyCode, KeyEvent event){
+				//boolean val = super.onKey(view, keyCode, event);
+				Log.e(TAG, ""+keyCode);
+				return doKey(view, keyCode, event);
+			}
+		}
+		if (webView.getView() instanceof CustomCordovaSystemWebView){
+			webView.getView().setCustomOnKeyListener(listener);
+		} else {
+			webView.getView().setOnKeyListener(listener);
+		}
         this.currentView = webView.getView();
-
     }
 
 
@@ -165,27 +148,6 @@ public class General extends CordovaPlugin implements View.OnKeyListener {
 
         return false;
 
-    }
-
-    private void playSound(String soundName, CallbackContext callbackContext)
-    {
-        switch(soundName){
-            case("success"):
-                SoundLoader.getInstance(ctx).playSuccess();
-                break;
-            case("fail"):
-                SoundLoader.getInstance(ctx).playFail();
-                break;
-            case("beep"):
-                SoundLoader.getInstance(ctx).playBeep();
-                break;
-            default:
-                callbackContext.error("Can't find provided sound for playSound");
-                return;
-                
-
-        }
-        callbackContext.success("Initiating sound");
     }
 }
 
