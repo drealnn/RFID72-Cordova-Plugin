@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class General extends CordovaPlugin implements View.OnKeyListener {
+public class General extends CordovaPlugin {
 
 
     private CallbackContext keyup_callback = null;
