@@ -421,6 +421,7 @@ class ReadTagHandler extends Handler {
             String str = "{\'tag\':\'" + tag + "\' , \'rssi\': \'" + rssi + "\'}";
             PluginResult result = new PluginResult(PluginResult.Status.OK, new JSONObject(str));
             result.setKeepCallback(true);
+			Log.e(TAG, "Sending tag json: "+str);
             onReaderReadTag_callback.sendPluginResult(result);
             if (playSounds){
                 SoundLoader.getInstance(ctx).playBeep();
@@ -487,7 +488,9 @@ class TagThread implements Runnable {
                 Log.i("data","EPC:"+res[1]);
             }
         } // end while
+		Log.e(TAG, "Thread loop finished");
         if (this.isEnabled("returnOnStop")){
+			Log.e(TAG, "Return on stop");
             for (Map.Entry<String, String> entry : this.epcRssiMap.entrySet()) {
                 sendTag(entry.getKey(), entry.getValue());
             }
