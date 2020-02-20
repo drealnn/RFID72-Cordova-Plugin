@@ -454,7 +454,7 @@ class TagThread implements Runnable {
     }
 
     private boolean isEnabled(String setting){
-        return this.options.get(setting) != null && !this.options.get(setting).equals("false");
+        return this.options.get(setting) != null && this.options.get(setting).equals("true");
     }
 
     private void sendTag(String epc, String rssi){
