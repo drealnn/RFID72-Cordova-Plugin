@@ -147,7 +147,7 @@ public Barcode2DWithSoft.ScanCallback  ScanBack = new Barcode2DWithSoft.ScanCall
             }
 
             SoundLoader.getInstance(ctx).playSuccess();
-            SoundLoader.getInstance(ctx).vibrate();
+            //SoundLoader.getInstance(ctx).vibrate();
         }
         result.setKeepCallback(true);
         getDecode_callback.sendPluginResult(result);
