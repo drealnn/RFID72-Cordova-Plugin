@@ -397,6 +397,7 @@ private void startInventory(CallbackContext callbackContext, JSONObject options)
     }
     if (mReader.startInventoryTag(0,0)) {
         loopFlag = true;
+		Log.e(TAG, ""+optionsMap.get("returnDistinct"));
         cordova.getThreadPool().execute(new TagThread(optionsMap));
         callbackContext.success("successfully reading continuously");
     } else {
