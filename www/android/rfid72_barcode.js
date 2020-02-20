@@ -7,10 +7,10 @@ module.exports =  {
 		callback('Nothing to echo.');
 	    }, "Barcode", "echo", [str]);
 	},
-	startDecode : function(successCallback, errorCallback){
+	start_scan : function(successCallback, errorCallback){
 		return exec(successCallback, errorCallback, "Barcode", 'scanner_startDecode', []);
 	},
-	stopDecode : function(successCallback, errorCallback){
+	stop_scan : function(successCallback, errorCallback){
 		return exec(successCallback, errorCallback, "Barcode", 'scanner_stopDecode', []);
 	},
 	isDecoding : function(successCallback, errorCallback){
@@ -25,7 +25,7 @@ module.exports =  {
 	deinitialize : function(successCallback, errorCallback){
 		return exec(successCallback, errorCallback, "Barcode", 'deinitialize_scanner', []);
 	},
-	onDecode : function(successCallback, errorCallback){
+	onScan : function(successCallback, errorCallback){
 		return exec(successCallback, errorCallback, "Barcode", 'register_decode', []);
 	}
 
