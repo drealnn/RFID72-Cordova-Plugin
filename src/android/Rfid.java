@@ -475,7 +475,7 @@ class TagThread implements Runnable {
                 String epc = mReader.convertUiiToEPC(res[1]);
                 String rssi = res[2];
                 if (this.isEnabled("returnDistinct")){
-                    if (this.epcRssiMap.get(epc) != null){
+                    if (this.epcRssiMap.get(epc) == null){
                         if (!this.isEnabled("returnOnStop")) {
                             sendTag(epc, rssi);
                         }
