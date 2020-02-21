@@ -137,18 +137,11 @@ public Barcode2DWithSoft.ScanCallback  ScanBack = new Barcode2DWithSoft.ScanCall
             }
             Log.e(TAG, errorMessage);
             result = new PluginResult(PluginResult.Status.ERROR, errorMessage);
-        }else{
+        } else {
             String barcode = new String(bytes, 0, length, StandardCharsets.US_ASCII);
-            try {
-                //result = new PluginResult(PluginResult.Status.OK, new JSONObject("{\'type\': \'N/A\' , \'barcode\': \'" + barcode + "\' }"));
-				result = new PluginResult(PluginResult.Status.OK, barcode);
-            } catch(JSONException e){
-                e.printStackTrace();
-                result = new PluginResult(PluginResult.Status.ERROR, "Error in constructing json for success decode callback");
-            }
-
+            //result = new PluginResult(PluginResult.Status.OK, new JSONObject("{\'type\': \'N/A\' , \'barcode\': \'" + barcode + "\' }"));
+			result = new PluginResult(PluginResult.Status.OK, barcode);
             SoundLoader.getInstance(ctx).playSuccess();
-            //SoundLoader.getInstance(ctx).vibrate();
         }
         result.setKeepCallback(true);
         getDecode_callback.sendPluginResult(result);
