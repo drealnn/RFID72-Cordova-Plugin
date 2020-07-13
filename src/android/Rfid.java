@@ -404,14 +404,18 @@ private void startInventory(CallbackContext callbackContext, JSONObject options)
         optionsMap = new HashMap<>();
     }
 	try {
-		if (mReader.startInventoryTag(0,0)) {
-			loopFlag = true;
-			Log.e(TAG, ""+optionsMap.get("returnDistinct"));
-			cordova.getThreadPool().execute(new TagThread(optionsMap));
-			callbackContext.success("successfully reading continuously");
+		if (!loopFlag){
+			if (mReader.startInventoryTag(0,0)) {
+				loopFlag = true;
+				Log.e(TAG, ""+optionsMap.get("returnDistinct"));
+				cordova.getThreadPool().execute(new TagThread(optionsMap));
+				callbackContext.success("successfully reading continuously");
+			} else {
+				mReader.stopInventory();
+				Log.e(TAG, "Failure to start inventory.");
+				callbackContext.error("Failure to start inventory");
+			}
 		} else {
-			mReader.stopInventory();
-			Log.e(TAG, "Failure to start inventory.");
 			callbackContext.error("Failure to start inventory");
 		}
 	} finally {
