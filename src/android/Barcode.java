@@ -152,6 +152,7 @@ public Barcode2DWithSoft.ScanCallback  ScanBack = new Barcode2DWithSoft.ScanCall
 public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
     this.ctx = cordova.getActivity().getApplicationContext();
+	SoundLoader.getInstance(ctx);
     mScanner = Barcode2DWithSoft.getInstance();
     boolean result = false;
     if(mScanner != null) {

@@ -309,6 +309,7 @@ public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
 	try {
 	    this.ctx = cordova.getActivity().getApplicationContext();
+		SoundLoader.getInstance(ctx);
         handler = new ReadTagHandler();
 		mReader = RFIDWithUHF.getInstance();
 		if (mReader != null) {
