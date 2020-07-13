@@ -50,7 +50,7 @@ private CallbackContext onReaderActionChanged_callback = null;
 private View currentView = null;
 
 private boolean loopFlag = false;
-private Lock inventoryLock = new Lock();
+private Lock inventoryLock = new ReentrantLock();
 private int inventoryFlag = 1;
 Handler handler;
 private int minPower = 5;
