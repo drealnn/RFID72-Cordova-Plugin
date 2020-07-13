@@ -27,7 +27,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
+import java.util.concurrent.locks;
 
 public class Rfid extends CordovaPlugin {
 
@@ -50,6 +50,7 @@ private CallbackContext onReaderActionChanged_callback = null;
 private View currentView = null;
 
 private boolean loopFlag = false;
+private Lock inventoryLock = new Lock();
 private int inventoryFlag = 1;
 Handler handler;
 private int minPower = 5;
@@ -364,21 +365,28 @@ private boolean stopInventory(CallbackContext callbackContext){
 }
 
 private boolean stopInventory() {
-    if (loopFlag) {
-        loopFlag = false;
-        if (mReader != null && mReader.stopInventory()) {
-            return true;
-        } else {
-            Log.e(TAG, "Failure to stop inventory.");
-            return false;
-        }
-    }
-    return true;
+	boolean res = true;
+	inventoryLock.lock();
+	try {
+		if (loopFlag) {
+			loopFlag = false;
+			if (mReader != null && mReader.stopInventory()) {
+				res = true;
+			} else {
+				Log.e(TAG, "Failure to stop inventory.");
+				res = false;
+			}
+		}
+	} finally {
+		inventoryLock.unlock();
+	}
+    return res;
 }
 
 private void startInventory(CallbackContext callbackContext, JSONObject options){
     Map<String, Object> optionsMap =  new HashMap<>();
-    try {
+    inventoryLock.lock();
+	try {
         optionsMap.put("returnOnStop", options.optString("returnOnStop"));
         optionsMap.put("returnDistinct", options.optString("returnDistinct"));
         List<String> EPCFilter = new ArrayList<>();
@@ -395,16 +403,20 @@ private void startInventory(CallbackContext callbackContext, JSONObject options)
         Log.e(TAG, "startInventory: Invalid params");
         optionsMap = new HashMap<>();
     }
-    if (mReader.startInventoryTag(0,0)) {
-        loopFlag = true;
-		Log.e(TAG, ""+optionsMap.get("returnDistinct"));
-        cordova.getThreadPool().execute(new TagThread(optionsMap));
-        callbackContext.success("successfully reading continuously");
-    } else {
-        mReader.stopInventory();
-        Log.e(TAG, "Failure to start inventory.");
-        callbackContext.error("Failure to start inventory");
-    }
+	try {
+		if (mReader.startInventoryTag(0,0)) {
+			loopFlag = true;
+			Log.e(TAG, ""+optionsMap.get("returnDistinct"));
+			cordova.getThreadPool().execute(new TagThread(optionsMap));
+			callbackContext.success("successfully reading continuously");
+		} else {
+			mReader.stopInventory();
+			Log.e(TAG, "Failure to start inventory.");
+			callbackContext.error("Failure to start inventory");
+		}
+	} finally {
+		inventoryLock.unlock();
+	}
 }
 
 class ReadTagHandler extends Handler {
